@@ -1,3 +1,5 @@
 .direnv
-zig-cache
+.zig-cache
 zig-out
+sample.txt
+input.txt
