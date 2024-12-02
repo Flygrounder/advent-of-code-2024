@@ -1,5 +1,6 @@
 const std = @import("std");
 const day1 = @import("day1.zig");
+const day2 = @import("day2.zig");
 
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
@@ -23,9 +24,11 @@ pub fn main() !void {
     solutions[index](gpa.allocator());
 }
 
-const solutions: [2]*const fn (allocator: std.mem.Allocator) void = .{
+const solutions = [_]*const fn (allocator: std.mem.Allocator) void{
     day1.part1,
     day1.part2,
+    day2.part1,
+    day2.part2,
 };
 
 fn exitWithHelp() noreturn {
