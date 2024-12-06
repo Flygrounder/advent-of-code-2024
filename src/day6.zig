@@ -150,22 +150,6 @@ pub fn part2(allocator: std.mem.Allocator) void {
         while (cur.moveNext()) {}
 
         if (cur.loop) {
-            // std.debug.print("{} {}\n", .{ entry.cx, entry.cy });
-            // for (0..cur.field.items.len) |i| {
-            //     for (0..cur.field.items[0].items.len) |j| {
-            //         const value = cur.field.items[i].items[j];
-            //         var pos = switch (value) {
-            //             .visited => ".",
-            //             .unvisited => ".",
-            //             .blocked => "#",
-            //         };
-            //         if (i == entry.cx and j == entry.cy) {
-            //             pos = "O";
-            //         }
-            //         std.debug.print("{s}", .{pos});
-            //     }
-            //     std.debug.print("{s}", .{"\n"});
-            // }
             result += 1;
         }
     }
