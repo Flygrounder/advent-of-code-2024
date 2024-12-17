@@ -16,6 +16,7 @@ const day13 = @import("day13.zig");
 const day14 = @import("day14.zig");
 const day15 = @import("day15.zig");
 const day16 = @import("day16.zig");
+const day17 = @import("day17.zig");
 
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
@@ -72,6 +73,8 @@ const solutions = [_]*const fn (allocator: std.mem.Allocator) void{
     day15.part2,
     day16.part1,
     day16.part2,
+    day17.part1,
+    day17.part2,
 };
 
 fn exitWithHelp() noreturn {

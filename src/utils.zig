@@ -29,8 +29,12 @@ pub fn deinitLines(lines: std.ArrayList(std.ArrayList(u8))) void {
 }
 
 pub fn printlnStdout(allocator: std.mem.Allocator, value: anytype) void {
+    printfStdout(allocator, "{}\n", .{value});
+}
+
+pub fn printfStdout(allocator: std.mem.Allocator, comptime fmt: []const u8, args: anytype) void {
     const stdout = std.io.getStdOut();
-    const output = std.fmt.allocPrint(allocator, "{}\n", .{value}) catch @panic("");
+    const output = std.fmt.allocPrint(allocator, fmt, args) catch @panic("");
     defer allocator.free(output);
 
     stdout.writeAll(output) catch @panic("");
